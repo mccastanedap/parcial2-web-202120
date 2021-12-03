@@ -1,9 +1,9 @@
-const DOMAIN = 'http://localhost:3001';
+const DOMAIN = "http://localhost:3001";
 const SERVER_API_PRODUCT = `${DOMAIN}/api/products`;
 
 const searchProductsURL = (searchKey) =>
   searchKey
-    ? `${SERVER_API_PRODUCT}?q=${encodeURIComponent(searchKey)}`
+    ? `${SERVER_API_PRODUCT}?que=${encodeURIComponent(searchKey)}`
     : `${SERVER_API_PRODUCT}`;
 
 /**
