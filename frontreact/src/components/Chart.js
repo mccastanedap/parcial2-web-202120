@@ -33,11 +33,13 @@ export const Chart = ({ width = 800, height = 600, data }) => {
       .enter()
       .append("rect")
       .attr("class", "bar")
-      .style("fill", "steelblue")
+      .style("fill", "pink")
       .attr("x", (d) => x(d.name))
       .attr("y", (d) => y(d.stock))
       .attr("height", (d) => iheight - y(d.stock))
-      .attr("width", x.bandwidth());
+      .attr("width", x.bandwidth())
+      .append("title")
+      .text((d) => `${d.name}: ${d.stock}`);
 
     g.append("g")
       .classed("x--axis", true)
