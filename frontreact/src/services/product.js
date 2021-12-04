@@ -2,7 +2,9 @@ const DOMAIN = "http://localhost:3001";
 const SERVER_API_PRODUCT = `${DOMAIN}/api/products`;
 
 const searchProductsURL = (searchKey) =>
-  `${SERVER_API_PRODUCT}?que=${encodeURIComponent(searchKey)}`;
+  searchKey
+    ? `${SERVER_API_PRODUCT}?que=${encodeURIComponent(searchKey)}`
+    : `${SERVER_API_PRODUCT}`;
 
 /**
  * Call api for searching products by query
