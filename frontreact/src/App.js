@@ -10,7 +10,12 @@ import messages from "./i18n/messages";
 
 function App() {
   const [searchState, setSearchState] = useState({ searchKey: " " });
+  //const localenguaje = LOCALES.ENGLISH;
   const [language, setLanguage] = useState(LOCALES.SPANISH);
+
+  //const setLanguage = (languagee) => {
+  //setLanguage({ lang: languagee });
+  //};
 
   const setSearchkey = (query) => {
     setSearchState({ searchKey: query });
@@ -19,7 +24,10 @@ function App() {
   return (
     <IntlProvider locale={language} messages={messages[language]}>
       <header>
-        <NavBar onSearchKeyChange={setSearchkey} />
+        <NavBar
+          onSearchKeyChange={setSearchkey}
+          onSearchLanguage={setLanguage}
+        />
       </header>
       <main>
         <Routes>
